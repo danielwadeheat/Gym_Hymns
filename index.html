@@ -43,7 +43,9 @@
         </div>
 
         <form class="search-form" id="search-form">
-          <label class="sr-only" for="search-input">Search by artist, track, or album</label>
+          <label class="sr-only" for="search-input">
+            Search by artist, track, or album
+          </label>
           <input
             id="search-input"
             name="search"
@@ -54,17 +56,7 @@
           <button type="submit">Search</button>
         </form>
 
-        <div class="quick-filters" id="quick-filters">
-          <button class="chip chip--active" type="button" data-filter="all">All Tracks</button>
-          <button class="chip" type="button" data-filter="warm-up">Warm-Up</button>
-          <button class="chip" type="button" data-filter="heavy lifting">Heavy Lifting</button>
-          <button class="chip" type="button" data-filter="heaviest lifting">Heaviest Lifting</button>
-          <button class="chip" type="button" data-filter="motivational/uplifting">Motivational</button>
-          <button class="chip" type="button" data-filter="cardio">Cardio</button>
-          <button class="chip" type="button" data-filter="focus">Focus</button>
-          <button class="chip" type="button" data-filter="recovery">Recovery</button>
-          <button class="chip" type="button" data-filter="endurance">Endurance</button>
-        </div>
+        <div class="quick-filters" id="quick-filters"></div>
 
         <p class="helper-text" id="results-message">Loading tracks...</p>
         <div class="results-grid" id="results-grid"></div>
@@ -81,17 +73,7 @@
           </button>
         </div>
 
-        <div class="favorites-filters" id="favorites-filters">
-          <button class="chip chip--active" type="button" data-category="all">All</button>
-          <button class="chip" type="button" data-category="warm-up">Warm-Up</button>
-          <button class="chip" type="button" data-category="heavy lifting">Heavy Lifting</button>
-          <button class="chip" type="button" data-category="heaviest lifting">Heaviest Lifting</button>
-          <button class="chip" type="button" data-category="motivational/uplifting">Motivational</button>
-          <button class="chip" type="button" data-category="cardio">Cardio</button>
-          <button class="chip" type="button" data-category="focus">Focus</button>
-          <button class="chip" type="button" data-category="recovery">Recovery</button>
-          <button class="chip" type="button" data-category="endurance">Endurance</button>
-        </div>
+        <div class="favorites-filters" id="favorites-filters"></div>
 
         <p class="helper-text" id="favorites-message">
           Save tracks to build your workout soundtrack.
@@ -103,28 +85,29 @@
     <template id="track-card-template">
       <article class="track-card">
         <div class="track-card__art"></div>
+
         <div class="track-card__body">
           <span class="track-card__tag"></span>
           <h3 class="track-card__title"></h3>
           <p class="track-card__meta track-card__artist"></p>
           <p class="track-card__meta track-card__album"></p>
+
           <div class="track-card__actions">
             <label>
               <span class="sr-only">Choose category</span>
-              <select class="track-card__select">
-                <option value="warm-up">Warm-Up</option>
-                <option value="heavy lifting">Heavy Lifting</option>
-                <option value="heaviest lifting">Heaviest Lifting</option>
-                <option value="motivational/uplifting">Motivational/Uplifting</option>
-                <option value="cardio">Cardio</option>
-                <option value="focus">Focus</option>
-                <option value="recovery">Recovery</option>
-                <option value="endurance">Endurance</option>
-              </select>
+              <select class="track-card__select"></select>
             </label>
             <button class="save-button" type="button">Save Pick</button>
           </div>
-          <a class="view-link" href="#" target="_blank" rel="noopener noreferrer">Find Track</a>
+
+          <a
+            class="view-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Find Track
+          </a>
         </div>
       </article>
     </template>
@@ -132,6 +115,7 @@
     <template id="favorite-card-template">
       <article class="favorite-card">
         <div class="favorite-card__art"></div>
+
         <div class="favorite-card__body">
           <div class="favorite-card__top">
             <div>
@@ -140,8 +124,16 @@
             </div>
             <span class="favorite-card__badge"></span>
           </div>
+
           <div class="favorite-card__actions">
-            <a class="view-link" href="#" target="_blank" rel="noopener noreferrer">Find Track</a>
+            <a
+              class="view-link"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Find Track
+            </a>
             <button class="remove-button" type="button">Remove</button>
           </div>
         </div>
