@@ -330,17 +330,17 @@ function formatCategoryLabel(value) {
 
 function createCoverArt(track) {
   const categoryColors = {
-    'warm-up': ['#26a7ff', '#7c5cff'],
-    'heavy-lifting': ['#7c5cff', '#ff5da2'],
-    'heaviest-lifting': ['#ff5da2', '#ff7a18'],
-    'motivational-uplifting': ['#0fd3b0', '#26a7ff'],
-    cardio: ['#11cdef', '#5fd1a3'],
-    focus: ['#5162ff', '#16c0ff'],
-    recovery: ['#5fd1a3', '#7c5cff'],
-    endurance: ['#ffb347', '#ff5da2']
+    'warm-up': ['#1f7aff', '#11d987'],
+    'heavy-lifting': ['#5b0f1a', '#cf2d2d'],
+    'heaviest-lifting': ['#ff6a00', '#b31212'],
+    'motivational-uplifting': ['#1df2a3', '#147bff'],
+    cardio: ['#00a6ff', '#ff7f11'],
+    focus: ['#1a5fff', '#0ea5b7'],
+    recovery: ['#2fbf71', '#2d6fba'],
+    endurance: ['#ff8a00', '#7a1328']
   };
 
-  const colors = categoryColors[track.category] || ['#7c5cff', '#0fd3b0'];
+  const colors = categoryColors[track.category] || ['#177cff', '#23d18b'];
   const initials = `${track.artist.charAt(0)}${track.title.charAt(0)}`.toUpperCase();
   const safeArtist = escapeSvgText(track.artist);
   const safeTitle = escapeSvgText(track.title);
