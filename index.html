@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workout Music Search App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content wrapper">
+        <p class="eyebrow">Music + Fitness Project</p>
+        <h1>Workout Music Search App</h1>
+        <p class="hero__text">
+          Search tracks by artist, song, or album. Save favorites into workout
+          categories and build your own training soundtrack.
+        </p>
+        <div class="hero__chips">
+          <span>Fetch API</span>
+          <span>DOM Rendering</span>
+          <span>Local Storage</span>
+          <span>Responsive UI</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrapper page-layout">
+      <section class="panel search-panel" aria-labelledby="search-heading">
+        <div class="panel__top">
+          <div>
+            <p class="section-label">Discover</p>
+            <h2 id="search-heading">Search workout tracks</h2>
+          </div>
+          <button class="ghost-button" id="clear-search-btn" type="button">
+            Clear Search
+          </button>
+        </div>
+
+        <form class="search-form" id="search-form">
+          <label class="sr-only" for="search-input">Search by artist, track, or album</label>
+          <input
+            id="search-input"
+            name="search"
+            type="text"
+            placeholder="Search by artist, song, or album"
+            autocomplete="off"
+          />
+          <button type="submit">Search</button>
+        </form>
+
+        <div class="quick-filters" id="quick-filters">
+          <button class="chip chip--active" type="button" data-filter="all">All Tracks</button>
+          <button class="chip" type="button" data-filter="warm-up">Warm-Up</button>
+          <button class="chip" type="button" data-filter="heavy lifting">Heavy Lifting</button>
+          <button class="chip" type="button" data-filter="heaviest lifting">Heaviest Lifting</button>
+          <button class="chip" type="button" data-filter="motivational/uplifting">Motivational</button>
+          <button class="chip" type="button" data-filter="cardio">Cardio</button>
+          <button class="chip" type="button" data-filter="focus">Focus</button>
+          <button class="chip" type="button" data-filter="recovery">Recovery</button>
+          <button class="chip" type="button" data-filter="endurance">Endurance</button>
+        </div>
+
+        <p class="helper-text" id="results-message">Loading tracks...</p>
+        <div class="results-grid" id="results-grid"></div>
+      </section>
+
+      <aside class="panel picks-panel" aria-labelledby="picks-heading">
+        <div class="panel__top panel__top--stacked">
+          <div>
+            <p class="section-label">Your Library</p>
+            <h2 id="picks-heading">My Workout Picks</h2>
+          </div>
+          <button class="ghost-button danger-button" id="clear-picks-btn" type="button">
+            Clear Picks
+          </button>
+        </div>
+
+        <div class="favorites-filters" id="favorites-filters">
+          <button class="chip chip--active" type="button" data-category="all">All</button>
+          <button class="chip" type="button" data-category="warm-up">Warm-Up</button>
+          <button class="chip" type="button" data-category="heavy lifting">Heavy Lifting</button>
+          <button class="chip" type="button" data-category="heaviest lifting">Heaviest Lifting</button>
+          <button class="chip" type="button" data-category="motivational/uplifting">Motivational</button>
+          <button class="chip" type="button" data-category="cardio">Cardio</button>
+          <button class="chip" type="button" data-category="focus">Focus</button>
+          <button class="chip" type="button" data-category="recovery">Recovery</button>
+          <button class="chip" type="button" data-category="endurance">Endurance</button>
+        </div>
+
+        <p class="helper-text" id="favorites-message">
+          Save tracks to build your workout soundtrack.
+        </p>
+        <div class="favorites-list" id="favorites-list"></div>
+      </aside>
+    </main>
+
+    <template id="track-card-template">
+      <article class="track-card">
+        <div class="track-card__art"></div>
+        <div class="track-card__body">
+          <span class="track-card__tag"></span>
+          <h3 class="track-card__title"></h3>
+          <p class="track-card__meta track-card__artist"></p>
+          <p class="track-card__meta track-card__album"></p>
+          <div class="track-card__actions">
+            <label>
+              <span class="sr-only">Choose category</span>
+              <select class="track-card__select">
+                <option value="warm-up">Warm-Up</option>
+                <option value="heavy lifting">Heavy Lifting</option>
+                <option value="heaviest lifting">Heaviest Lifting</option>
+                <option value="motivational/uplifting">Motivational/Uplifting</option>
+                <option value="cardio">Cardio</option>
+                <option value="focus">Focus</option>
+                <option value="recovery">Recovery</option>
+                <option value="endurance">Endurance</option>
+              </select>
+            </label>
+            <button class="save-button" type="button">Save Pick</button>
+          </div>
+          <a class="view-link" href="#" target="_blank" rel="noopener noreferrer">Find Track</a>
+        </div>
+      </article>
+    </template>
+
+    <template id="favorite-card-template">
+      <article class="favorite-card">
+        <div class="favorite-card__art"></div>
+        <div class="favorite-card__body">
+          <div class="favorite-card__top">
+            <div>
+              <h3 class="favorite-card__title"></h3>
+              <p class="favorite-card__meta"></p>
+            </div>
+            <span class="favorite-card__badge"></span>
+          </div>
+          <div class="favorite-card__actions">
+            <a class="view-link" href="#" target="_blank" rel="noopener noreferrer">Find Track</a>
+            <button class="remove-button" type="button">Remove</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>

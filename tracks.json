@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "title": "Can You Feel My Heart",
+    "artist": "Bring Me The Horizon",
+    "album": "Sempiternal",
+    "category": "warm-up"
+  },
+  {
+    "id": 2,
+    "title": "Invincible",
+    "artist": "POP EVIL",
+    "album": "War of Angels",
+    "category": "motivational/uplifting"
+  },
+  {
+    "id": 3,
+    "title": "The Signal Fire",
+    "artist": "Killswitch Engage",
+    "album": "Atonement",
+    "category": "heavy lifting"
+  },
+  {
+    "id": 4,
+    "title": "Doomsday",
+    "artist": "Architects",
+    "album": "Holy Hell",
+    "category": "heavy lifting"
+  },
+  {
+    "id": 5,
+    "title": "Bleed",
+    "artist": "Meshuggah",
+    "album": "obZen",
+    "category": "heaviest lifting"
+  },
+  {
+    "id": 6,
+    "title": "Bow Down",
+    "artist": "I Prevail",
+    "album": "Trauma",
+    "category": "heaviest lifting"
+  },
+  {
+    "id": 7,
+    "title": "V.A.N.",
+    "artist": "Bad Omens",
+    "album": "Concrete Jungle: The OST",
+    "category": "cardio"
+  },
+  {
+    "id": 8,
+    "title": "Animals",
+    "artist": "Nickelback",
+    "album": "All the Right Reasons",
+    "category": "cardio"
+  },
+  {
+    "id": 9,
+    "title": "The Pot",
+    "artist": "Tool",
+    "album": "10,000 Days",
+    "category": "focus"
+  },
+  {
+    "id": 10,
+    "title": "Diamond Eyes",
+    "artist": "Deftones",
+    "album": "Diamond Eyes",
+    "category": "focus"
+  },
+  {
+    "id": 11,
+    "title": "The Summoning",
+    "artist": "Sleep Token",
+    "album": "Take Me Back to Eden",
+    "category": "focus"
+  },
+  {
+    "id": 12,
+    "title": "Jaded",
+    "artist": "Spiritbox",
+    "album": "The Fear of Fear",
+    "category": "endurance"
+  },
+  {
+    "id": 13,
+    "title": "Carrion",
+    "artist": "Parkway Drive",
+    "album": "Horizons",
+    "category": "endurance"
+  },
+  {
+    "id": 14,
+    "title": "Iridescent",
+    "artist": "Linkin Park",
+    "album": "A Thousand Suns",
+    "category": "recovery"
+  },
+  {
+    "id": 15,
+    "title": "Rain",
+    "artist": "Sleep Token",
+    "album": "Sundowning",
+    "category": "recovery"
+  },
+  {
+    "id": 16,
+    "title": "Atlas Falls",
+    "artist": "Shinedown",
+    "album": "Atlas Falls",
+    "category": "motivational/uplifting"
+  },
+  {
+    "id": 17,
+    "title": "Numb",
+    "artist": "Linkin Park",
+    "album": "Meteora",
+    "category": "focus"
+  },
+  {
+    "id": 18,
+    "title": "The Downfall of Us All",
+    "artist": "A Day to Remember",
+    "album": "Homesick",
+    "category": "heavy lifting"
+  },
+  {
+    "id": 19,
+    "title": "Holy Roller",
+    "artist": "Spiritbox",
+    "album": "Eternal Blue",
+    "category": "heaviest lifting"
+  },
+  {
+    "id": 20,
+    "title": "Far From Home",
+    "artist": "Five Finger Death Punch",
+    "album": "War Is the Answer",
+    "category": "recovery"
+  }
+]
