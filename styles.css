@@ -5,15 +5,17 @@
   --panel-border: rgba(255, 255, 255, 0.08);
   --text: #f4f7fb;
   --muted: #a5afc2;
-  --accent: #076861;
+  --accent: #7c5cff;
   --accent-2: #0fd3b0;
-  --accent-3: #03a727;
-  --danger: #9d0101;
+  --accent-3: #ff5da2;
+  --danger: #ff6b6b;
   --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
   --radius: 22px;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -45,7 +47,11 @@ select {
 
 button,
 a {
-  transition: transform 0.18s ease, opacity 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease;
 }
 
 button:hover,
@@ -181,9 +187,13 @@ a:hover {
   padding: 0.95rem 1rem;
 }
 
+.search-form input::placeholder {
+  color: var(--muted);
+}
+
 .search-form input:focus,
 .track-card__select:focus {
-  outline: 2px solid rgba(0, 255, 106, 0.35);
+  outline: 2px solid rgba(124, 92, 255, 0.35);
   outline-offset: 1px;
 }
 
@@ -212,7 +222,7 @@ a:hover {
 .danger-button,
 .remove-button {
   background: rgba(255, 107, 107, 0.14);
-  color: hsl(0, 100%, 28%);
+  color: #ffd4d4;
 }
 
 .helper-text {
@@ -243,9 +253,16 @@ a:hover {
   aspect-ratio: 1;
   border-radius: 18px;
   overflow: hidden;
-  background: linear-gradient(140deg, rgba(0, 31, 125, 0.612), rgba(6, 119, 93, 0.544));
+  background: linear-gradient(140deg, rgba(124, 92, 255, 0.55), rgba(15, 211, 176, 0.35));
   display: flex;
   align-items: stretch;
+}
+
+.track-card__art img,
+.favorite-card__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .track-card__body,
@@ -299,7 +316,7 @@ a:hover {
 
 .track-card__actions label {
   flex: 1;
-  min-width: 150px;
+  min-width: 170px;
 }
 
 .view-link {
@@ -354,19 +371,16 @@ a:hover {
 
   .search-form,
   .track-card,
-  .favorite-card,
-  .track-card__actions,
-  .favorite-card__top,
-  .favorite-card__actions,
-  .panel__top {
-    grid-template-columns: 1fr;
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .track-card,
   .favorite-card {
     grid-template-columns: 1fr;
+  }
+
+  .panel__top,
+  .track-card__actions,
+  .favorite-card__top,
+  .favorite-card__actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .track-card__art,
