@@ -1,30 +1,30 @@
 [
   {
     "id": 1,
-    "title": "Can You Feel My Heart",
+    "title": "Chelsea Smile",
     "artist": "Bring Me The Horizon",
-    "album": "Sempiternal",
-    "category": "warm-up"
+    "album": "Suicide Season",
+    "category": "heaviest lifting"
   },
   {
     "id": 2,
-    "title": "Invincible",
-    "artist": "POP EVIL",
-    "album": "War of Angels",
+    "title": "Breath Again",
+    "artist": "Spoken",
+    "album": "Breathe Again",
     "category": "motivational/uplifting"
   },
   {
     "id": 3,
-    "title": "The Signal Fire",
-    "artist": "Killswitch Engage",
-    "album": "Atonement",
-    "category": "heavy lifting"
+    "title": "From Ashes",
+    "artist": "War Of Ages",
+    "album": "From Ashes - Single",
+    "category": "motivational/uplifting"
   },
   {
     "id": 4,
-    "title": "Doomsday",
+    "title": "Goliath",
     "artist": "Architects",
-    "album": "Holy Hell",
+    "album": "For Those That Wish to Exist",
     "category": "heavy lifting"
   },
   {
@@ -39,7 +39,7 @@
     "title": "Bow Down",
     "artist": "I Prevail",
     "album": "Trauma",
-    "category": "heavy lifting"
+    "category": "heaviest lifting"
   },
   {
     "id": 7,
@@ -50,93 +50,93 @@
   },
   {
     "id": 8,
-    "title": "Animals",
-    "artist": "Nickelback",
-    "album": "All the Right Reasons",
+    "title": "Release The Pressure (Brutal Edit)",
+    "artist": "Calvin Harris",
+    "album": "Release The Pressure (Brutal Edit) - Single",
     "category": "cardio"
   },
   {
     "id": 9,
-    "title": "The Pot",
-    "artist": "Tool",
-    "album": "10,000 Days",
+    "title": "State of Gold",
+    "artist": "Forevermore",
+    "album": "Telos",
     "category": "focus"
   },
   {
     "id": 10,
-    "title": "Diamond Eyes",
-    "artist": "Deftones",
-    "album": "Diamond Eyes",
+    "title": "Lose Your Self",
+    "artist": "Enter Shikari",
+    "album": "Lose Your Self",
     "category": "focus"
   },
   {
     "id": 11,
-    "title": "The Summoning",
-    "artist": "Sleep Token",
-    "album": "Take Me Back to Eden",
+    "title": "Breathe In",
+    "artist": "Afterglow",
+    "album": "Ephemeral",
     "category": "focus"
   },
   {
     "id": 12,
-    "title": "Jaded",
-    "artist": "Spiritbox",
-    "album": "The Fear of Fear",
+    "title": "Carry On",
+    "artist": "Blessed By A Broken Heart",
+    "album": "Pedal to the Metal",
     "category": "endurance"
   },
   {
     "id": 13,
-    "title": "Carrion",
-    "artist": "Parkway Drive",
-    "album": "Horizons",
+    "title": "Hold On",
+    "artist": "Safe-Mode",
+    "album": "Hold On - Single",
     "category": "endurance"
   },
   {
     "id": 14,
-    "title": "Iridescent",
-    "artist": "Linkin Park",
-    "album": "A Thousand Suns",
+    "title": "Spirit Breaker",
+    "artist": "August Burns Red",
+    "album": "Rescue & Restore",
     "category": "recovery"
   },
   {
     "id": 15,
-    "title": "Rain",
-    "artist": "Sleep Token",
-    "album": "Sundowning",
+    "title": "Meridian",
+    "artist": "August Burns Red",
+    "album": "Constellations",
     "category": "recovery"
   },
   {
     "id": 16,
-    "title": "Atlas Falls",
-    "artist": "Shinedown",
-    "album": "Atlas Falls",
+    "title": "Beauty in Tragedy",
+    "artist": "August Burns Red",
+    "album": "Rescue & Restore",
     "category": "motivational/uplifting"
   },
   {
     "id": 17,
-    "title": "With You",
+    "title": "Numb",
     "artist": "Linkin Park",
-    "album": "Hybrid Theory",
+    "album": "Meteora",
     "category": "focus"
   },
   {
     "id": 18,
-    "title": "The Downfall of Us All",
-    "artist": "A Day to Remember",
-    "album": "Homesick",
+    "title": "Echos",
+    "artist": "As I Lay Dying",
+    "album": "Through Storms Ahead",
     "category": "heavy lifting"
   },
   {
     "id": 19,
-    "title": "Holy Roller",
-    "artist": "Spiritbox",
-    "album": "Eternal Blue",
+    "title": "Supernova",
+    "artist": "The Devil Wears Prada",
+    "album": "Space EP",
     "category": "heaviest lifting"
   },
   {
     "id": 20,
-    "title": "Far From Home",
-    "artist": "Five Finger Death Punch",
-    "album": "War Is the Answer",
+    "title": "Breakthrough",
+    "artist": "Onward To Olympas",
+    "album": "Indicator",
     "category": "recovery"
   }
 ]
