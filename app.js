@@ -13,11 +13,24 @@ const favoriteCardTemplate = document.querySelector('#favorite-card-template');
 
 const STORAGE_KEY = 'workout-music-picks';
 
+const CATEGORY_OPTIONS = [
+  { value: 'warm-up', label: 'Warm-Up' },
+  { value: 'heavy-lifting', label: 'Heavy Lifting' },
+  { value: 'heaviest-lifting', label: 'Heaviest Lifting' },
+  { value: 'motivational-uplifting', label: 'Motivational / Uplifting' },
+  { value: 'cardio', label: 'Cardio' },
+  { value: 'focus', label: 'Focus' },
+  { value: 'recovery', label: 'Recovery' },
+  { value: 'endurance', label: 'Endurance' }
+];
+
 let allTracks = [];
 let filteredTracks = [];
 let activeTrackFilter = 'all';
 let activeFavoritesFilter = 'all';
 let favorites = loadFavorites();
+
+buildFilterButtons();
 
 async function loadTracks() {
   try {
@@ -34,8 +47,42 @@ async function loadTracks() {
     renderFavorites();
   } catch (error) {
     resultsMessage.textContent = 'Something went wrong loading the track list.';
-    resultsGrid.innerHTML = '<div class="empty-state">Check the file path for <strong>tracks.json</strong> or run the project with Live Server.</div>';
+    resultsGrid.innerHTML =
+      '<div class="empty-state">Check the file path for <strong>tracks.json</strong> or run the project with Live Server.</div>';
   }
+}
+
+function buildFilterButtons() {
+  quickFilters.innerHTML = '';
+  favoritesFilters.innerHTML = '';
+
+  quickFilters.appendChild(createFilterButton('All Tracks', 'all', 'filter', true));
+  favoritesFilters.appendChild(createFilterButton('All', 'all', 'category', true));
+
+  for (const category of CATEGORY_OPTIONS) {
+    quickFilters.appendChild(
+      createFilterButton(category.label, category.value, 'filter', false)
+    );
+
+    favoritesFilters.appendChild(
+      createFilterButton(category.label, category.value, 'category', false)
+    );
+  }
+}
+
+function createFilterButton(label, value, type, isActive) {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = isActive ? 'chip chip--active' : 'chip';
+  button.textContent = label;
+
+  if (type === 'filter') {
+    button.dataset.filter = value;
+  } else {
+    button.dataset.category = value;
+  }
+
+  return button;
 }
 
 function loadFavorites() {
@@ -68,7 +115,8 @@ function applyTrackFilters() {
   for (const track of allTracks) {
     const searchText = `${track.title} ${track.artist} ${track.album}`.toLowerCase();
     const matchesQuery = query === '' || searchText.includes(query);
-    const matchesCategory = activeTrackFilter === 'all' || track.category === activeTrackFilter;
+    const matchesCategory =
+      activeTrackFilter === 'all' || track.category === activeTrackFilter;
 
     if (matchesQuery && matchesCategory) {
       matches.push(track);
@@ -87,7 +135,8 @@ function updateResultsMessage(query = searchInput.value.trim()) {
   }
 
   if (filteredTracks.length === 0) {
-    resultsMessage.textContent = 'No tracks matched your search yet. Try a different artist, song, or album.';
+    resultsMessage.textContent =
+      'No tracks matched your search yet. Try a different artist, song, album, or category.';
     return;
   }
 
@@ -97,7 +146,9 @@ function updateResultsMessage(query = searchInput.value.trim()) {
   }
 
   if (activeTrackFilter !== 'all') {
-    resultsMessage.textContent = `Showing ${filteredTracks.length} ${activeTrackFilter} track(s).`;
+    resultsMessage.textContent = `Showing ${filteredTracks.length} ${formatCategoryLabel(
+      activeTrackFilter
+    )} track(s).`;
     return;
   }
 
@@ -108,7 +159,8 @@ function renderTracks(tracks) {
   resultsGrid.innerHTML = '';
 
   if (tracks.length === 0) {
-    resultsGrid.innerHTML = '<div class="empty-state">No tracks found. Try a broader search or another category filter.</div>';
+    resultsGrid.innerHTML =
+      '<div class="empty-state">No tracks found. Try a broader search or another category filter.</div>';
     return;
   }
 
@@ -125,11 +177,13 @@ function renderTracks(tracks) {
     const viewLink = card.querySelector('.view-link');
 
     art.innerHTML = `<img src="${createCoverArt(track)}" alt="Album art for ${track.title} by ${track.artist}">`;
-    tag.textContent = track.category;
+    tag.textContent = formatCategoryLabel(track.category);
     title.textContent = track.title;
     artist.textContent = track.artist;
     album.textContent = track.album;
-    select.value = track.category;
+
+    buildCategorySelectOptions(select, track.category);
+
     viewLink.href = buildTrackSearchLink(track);
 
     saveButton.addEventListener('click', function () {
@@ -141,6 +195,22 @@ function renderTracks(tracks) {
   }
 }
 
+function buildCategorySelectOptions(select, selectedValue) {
+  select.innerHTML = '';
+
+  for (const category of CATEGORY_OPTIONS) {
+    const option = document.createElement('option');
+    option.value = category.value;
+    option.textContent = category.label;
+
+    if (category.value === selectedValue) {
+      option.selected = true;
+    }
+
+    select.appendChild(option);
+  }
+}
+
 function addFavorite(track, category) {
   const existingIndex = findFavoriteIndex(track.id);
   const favoriteTrack = {
@@ -149,7 +219,7 @@ function addFavorite(track, category) {
     artist: track.artist,
     album: track.album,
     baseCategory: track.category,
-    category,
+    category: category
   };
 
   if (existingIndex !== -1) {
@@ -185,13 +255,17 @@ function renderFavorites() {
 
   if (favorites.length === 0) {
     favoritesMessage.textContent = 'Save tracks to build your workout soundtrack.';
-    favoritesList.innerHTML = '<div class="empty-state">Your saved picks will show up here. Start by adding a few warm-up or heavy lifting tracks.</div>';
+    favoritesList.innerHTML =
+      '<div class="empty-state">Your saved picks will show up here. Start by adding a few heavy or motivational tracks.</div>';
     return;
   }
 
   if (visibleFavorites.length === 0) {
-    favoritesMessage.textContent = `You do not have any saved picks in ${activeFavoritesFilter} yet.`;
-    favoritesList.innerHTML = '<div class="empty-state">Try another filter or save a new track into this category.</div>';
+    favoritesMessage.textContent = `You do not have any saved picks in ${formatCategoryLabel(
+      activeFavoritesFilter
+    )} yet.`;
+    favoritesList.innerHTML =
+      '<div class="empty-state">Try another filter or save a new track into this category.</div>';
     return;
   }
 
@@ -209,11 +283,12 @@ function renderFavorites() {
     art.innerHTML = `<img src="${createCoverArt({
       title: favorite.title,
       artist: favorite.artist,
-      category: favorite.baseCategory || favorite.category,
+      category: favorite.baseCategory || favorite.category
     })}" alt="Album art for ${favorite.title} by ${favorite.artist}">`;
+
     title.textContent = favorite.title;
     meta.textContent = `${favorite.artist} • ${favorite.album}`;
-    badge.textContent = favorite.category;
+    badge.textContent = formatCategoryLabel(favorite.category);
     viewLink.href = buildTrackSearchLink(favorite);
 
     removeButton.addEventListener('click', function () {
@@ -243,22 +318,33 @@ function buildTrackSearchLink(track) {
   return `https://www.youtube.com/results?search_query=${term}`;
 }
 
+function formatCategoryLabel(value) {
+  for (const category of CATEGORY_OPTIONS) {
+    if (category.value === value) {
+      return category.label;
+    }
+  }
+
+  return value;
+}
+
 function createCoverArt(track) {
   const categoryColors = {
     'warm-up': ['#26a7ff', '#7c5cff'],
-    'heavy lifting': ['#7c5cff', '#ff5da2'],
-    'heaviest lifting': ['#ff5da2', '#ff7a18'],
-    'motivational/uplifting': ['#0fd3b0', '#26a7ff'],
+    'heavy-lifting': ['#7c5cff', '#ff5da2'],
+    'heaviest-lifting': ['#ff5da2', '#ff7a18'],
+    'motivational-uplifting': ['#0fd3b0', '#26a7ff'],
     cardio: ['#11cdef', '#5fd1a3'],
     focus: ['#5162ff', '#16c0ff'],
     recovery: ['#5fd1a3', '#7c5cff'],
-    endurance: ['#ffb347', '#ff5da2'],
+    endurance: ['#ffb347', '#ff5da2']
   };
 
   const colors = categoryColors[track.category] || ['#7c5cff', '#0fd3b0'];
   const initials = `${track.artist.charAt(0)}${track.title.charAt(0)}`.toUpperCase();
   const safeArtist = escapeSvgText(track.artist);
   const safeTitle = escapeSvgText(track.title);
+
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="Album art for ${safeTitle} by ${safeArtist}">
       <defs>
@@ -288,16 +374,6 @@ function escapeSvgText(value) {
     .replaceAll("'", '&apos;');
 }
 
-function setActiveChip(container, clickedButton) {
-  const buttons = container.querySelectorAll('.chip');
-
-  for (const button of buttons) {
-    button.classList.remove('chip--active');
-  }
-
-  clickedButton.classList.add('chip--active');
-}
-
 quickFilters.addEventListener('click', function (event) {
   const button = event.target.closest('.chip');
 
@@ -322,11 +398,23 @@ favoritesFilters.addEventListener('click', function (event) {
   renderFavorites();
 });
 
+function setActiveChip(container, clickedButton) {
+  const buttons = container.querySelectorAll('.chip');
+
+  for (const button of buttons) {
+    button.classList.remove('chip--active');
+  }
+
+  clickedButton.classList.add('chip--active');
+}
+
 clearSearchBtn.addEventListener('click', function () {
   searchInput.value = '';
   activeTrackFilter = 'all';
+
   const allButton = quickFilters.querySelector('[data-filter="all"]');
   setActiveChip(quickFilters, allButton);
+
   applyTrackFilters();
 });
 

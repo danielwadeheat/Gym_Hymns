@@ -4,42 +4,42 @@
     "title": "Chelsea Smile",
     "artist": "Bring Me The Horizon",
     "album": "Suicide Season",
-    "category": "heaviest lifting"
+    "category": "heaviest-lifting"
   },
   {
     "id": 2,
     "title": "Breath Again",
     "artist": "Spoken",
     "album": "Breathe Again",
-    "category": "motivational/uplifting"
+    "category": "motivational-uplifting"
   },
   {
     "id": 3,
     "title": "From Ashes",
     "artist": "War Of Ages",
     "album": "From Ashes - Single",
-    "category": "motivational/uplifting"
+    "category": "motivational-uplifting"
   },
   {
     "id": 4,
     "title": "Goliath",
     "artist": "Architects",
     "album": "For Those That Wish to Exist",
-    "category": "heavy lifting"
+    "category": "heavy-lifting"
   },
   {
     "id": 5,
     "title": "Bleed",
     "artist": "Meshuggah",
     "album": "obZen",
-    "category": "heaviest lifting"
+    "category": "heaviest-lifting"
   },
   {
     "id": 6,
     "title": "Bow Down",
     "artist": "I Prevail",
     "album": "Trauma",
-    "category": "heaviest lifting"
+    "category": "heaviest-lifting"
   },
   {
     "id": 7,
@@ -109,7 +109,7 @@
     "title": "Beauty in Tragedy",
     "artist": "August Burns Red",
     "album": "Rescue & Restore",
-    "category": "motivational/uplifting"
+    "category": "motivational-uplifting"
   },
   {
     "id": 17,
@@ -123,14 +123,14 @@
     "title": "Echos",
     "artist": "As I Lay Dying",
     "album": "Through Storms Ahead",
-    "category": "heavy lifting"
+    "category": "heavy-lifting"
   },
   {
     "id": 19,
     "title": "Supernova",
     "artist": "The Devil Wears Prada",
     "album": "Space EP",
-    "category": "heaviest lifting"
+    "category": "heaviest-lifting"
   },
   {
     "id": 20,
@@ -138,5 +138,82 @@
     "artist": "Onward To Olympas",
     "album": "Indicator",
     "category": "recovery"
+  },
+  {
+    "id": 21,
+    "title": "Pulse (feat. V O E) [V O E Remix]",
+    "artist": "PhaseOne & Banks Arcade",
+    "album": "Pulse (feat. V O E) [V O E Remix] - Single",
+    "category": "endurance"
+  },
+  {
+    "id": 22,
+    "title": "Light Years",
+    "artist": "The Ghost Inside",
+    "album": "Searching for Solace",
+    "category": "motivational-uplifting"
+  },
+  {
+    "id": 23,
+    "title": "Misery",
+    "artist": "The Browning",
+    "album": "End Of Existence",
+    "category": "heaviest-lifting"
+  },
+  {
+    "id": 24,
+    "title": "The Rumbling",
+    "artist": "SiM",
+    "album": "The Rumbling - Single",
+    "category": "heaviest-lifting"
+  },
+  {
+    "id": 25,
+    "title": "Omni",
+    "artist": "The Browning",
+    "album": "End Of Existence",
+    "category": "motivational-uplifting"
+  },
+  {
+    "id": 26,
+    "title": "Hollowed Heart",
+    "artist": "Make Them Suffer",
+    "album": "How to Survive a Funeral",
+    "category": "heaviest-lifting"
+  },
+  {
+    "id": 27,
+    "title": "Parasite",
+    "artist": "Ark Of The Covenant",
+    "album": "Parasite - Single",
+    "category": "heaviest-lifting"
+  },
+  {
+    "id": 28,
+    "title": "Mass Psychosis",
+    "artist": "Artifact",
+    "album": "Devolution",
+    "category": "heaviest-lifting"
+  },
+  {
+    "id": 29,
+    "title": "Two Minds In One",
+    "artist": "Villain Of The Story",
+    "album": "Two Minds In One - Single",
+    "category": "heaviest-lifting"
+  },
+  {
+    "id": 30,
+    "title": "Thegodmachine: The Rider",
+    "artist": "Phinehas",
+    "album": "Thegodmachine: The Rider - Single",
+    "category": "motivational-uplifting"
+  },
+  {
+    "id": 31,
+    "title": "For The Fallen",
+    "artist": "For Today",
+    "album": "Ekklesia",
+    "category": "motivational-uplifting"
   }
 ]
