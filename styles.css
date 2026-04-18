@@ -5,10 +5,10 @@
   --panel-border: rgba(72, 93, 118, 0.36);
   --text: #f7f9fc;
   --muted: #9aa6b6;
-  --accent: #4169e1;
+  --accent: #ce1f00;
   --accent-2: #21f39a;
   --accent-3: #ff6f0f;
-  --danger: #4169e1;
+  --danger: hsl(0, 100%, 24%);
   --danger-soft: rgba(65, 105, 225, 0.24);
   --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
   --radius: 22px;
