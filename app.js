@@ -331,13 +331,13 @@ function formatCategoryLabel(value) {
 function createCoverArt(track) {
   const categoryColors = {
     'warm-up': ['#1f7aff', '#11d987'],
-    'heavy-lifting': ['#5b0f1a', '#cf2d2d'],
+    'heavy-lifting': ['#274cbf', '#4169e1'],
     'heaviest-lifting': ['#ff6a00', '#b31212'],
     'motivational-uplifting': ['#1df2a3', '#147bff'],
     cardio: ['#00a6ff', '#ff7f11'],
     focus: ['#1a5fff', '#0ea5b7'],
     recovery: ['#2fbf71', '#2d6fba'],
-    endurance: ['#ff8a00', '#7a1328']
+    endurance: ['#ff8a00', '#4169e1']
   };
 
   const colors = categoryColors[track.category] || ['#177cff', '#23d18b'];
