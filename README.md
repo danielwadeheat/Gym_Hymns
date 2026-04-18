@@ -13,10 +13,6 @@ A junior-friendly portfolio project built with **HTML, CSS, and JavaScript**.
 
 ## Why this version is smart for a junior portfolio
 
-This project stays in **junior territory** while still showing the right skills. It avoids API auth complexity and focuses on the fundamentals you should be able to explain in an interview.
-
-You can say:
-
 > I built this because music and training are both a big part of my life. I wanted to practice fetch API, DOM rendering, filtering, and saving user choices with localStorage.
 
 ## Main features
@@ -34,12 +30,6 @@ You can say:
   - Focus
   - Recovery
   - Endurance
-
-## How to run it
-
-1. Open the folder in VS Code.
-2. Install the **Live Server** extension if you have not already.
-3. Right-click `index.html` and choose **Open with Live Server**.
 
 ## How it works
 
